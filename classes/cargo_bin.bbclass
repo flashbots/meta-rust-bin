@@ -195,7 +195,7 @@ cargo_bin_do_compile() {
 	export HOST_CXXFLAGS="${BUILD_CXXFLAGS}"
 	export HOST_AR="${BUILD_AR}"
     export PKG_CONFIG_ALLOW_CROSS="1"
-    export LDFLAGS=""
+    # export LDFLAGS="${LDFLAGS}"
     export RUSTFLAGS="${RUSTFLAGS}"
     export SSH_AUTH_SOCK="${SSH_AUTH_SOCK}"
 
@@ -213,8 +213,8 @@ cargo_bin_do_compile() {
 
     # The CC crate defaults to using CFLAGS when compiling everything. We can
     # give it custom flags for compiling on the host.
-    export HOST_CXXFLAGS=""
-    export HOST_CFLAGS=""
+    # export HOST_CXXFLAGS=""
+    # export HOST_CFLAGS=""
 
     bbnote "which rustc:" `which rustc`
     bbnote "rustc --version" `rustc --version`
